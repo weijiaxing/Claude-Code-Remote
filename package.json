@@ -9,7 +9,11 @@
     "daemon:stop": "node claude-remote.js daemon stop",
     "daemon:status": "node claude-remote.js daemon status",
     "relay:pty": "node start-relay-pty.js",
-    "relay:start": "INJECTION_MODE=pty node src/relay/relay-pty.js"
+    "relay:start": "INJECTION_MODE=pty node src/relay/relay-pty.js",
+    "relay:unified": "node start-unified-relay.js",
+    "relay:feishu": "node src/relay/feishu-command-relay.js",
+    "test:feishu": "node test-feishu.js",
+    "config:feishu": "node src/config-manager.js"
   },
   "keywords": [
     "claude-code",

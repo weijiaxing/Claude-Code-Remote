@@ -50,6 +50,14 @@ class Notifier {
             this.registerChannel('email', email);
         }
 
+        // Load feishu channel
+        const FeishuChannel = require('../channels/feishu/webhook');
+        const feishuConfig = this.config.getChannel('feishu');
+        if (feishuConfig && feishuConfig.enabled) {
+            const feishu = new FeishuChannel(feishuConfig.config || {});
+            this.registerChannel('feishu', feishu);
+        }
+
         // TODO: Load other channels based on configuration
         // Discord, Telegram, etc.
 
